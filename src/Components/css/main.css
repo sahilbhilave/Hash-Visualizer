@@ -1,7 +1,7 @@
 .footer {
     position: fixed;
     left: 0px;
-    bottom: 0px;
+    bottom: 50px;
     padding-right : 10px;
     width: 100%;
     height: 15%;
@@ -11,9 +11,6 @@
 
  }
 
-select{
-   text-align: center;
-}
 
 b{
    display: block;
@@ -45,7 +42,7 @@ b{
    .footer {
       position: fixed;
       left: 0px;
-      bottom: 0px;
+      bottom: 50px;
       padding-right : 0px;
       width: 100%;
       height: 20%;
@@ -53,11 +50,14 @@ b{
       color: white;
       text-align: center;
    }
-
+   #type
+   {
+      width: 200px;
+   }
    input{
       padding : 10px;
       text-align: left;
-      margin : 30px;
+      margin : 20px;
       width : 60px;
    }
   
@@ -77,5 +77,20 @@ b{
  @media (max-height: 400px) {
    .footer {
       bottom: 15px;
+   }
+ }
+
+ @media (max-width: 200px) {
+   #type{
+      width : 500px;
+      padding : 10px;
+      font-size: 15px;
+      text-align: center;
+      margin : auto;
+    }
+   button{
+      padding: 10px;
+      width : 40px;
+      margin : 0px;
    }
  }
