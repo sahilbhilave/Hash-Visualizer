@@ -1,0 +1,39 @@
+table{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 60%; */
+}
+
+#Table{
+  width: 90%;
+  margin: auto;
+}
+
+td{
+    border: 1px solid black;
+    padding: 25px;
+}
+
+td:hover{
+  border: 1px solid magenta;
+}
+
+#index td{
+    border:0px;
+}
+
+
+@media (max-width: 800px) {
+  table{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width : 0%;
+    
+  }
+  td{
+    border: 1px solid black;
+    padding: 12px;
+}
+}
