@@ -2,7 +2,6 @@ table{
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  /* width: 60%; */
 }
 
 #Table{
@@ -12,7 +11,7 @@ table{
 
 td{
     border: 1px solid black;
-    padding: 25px;
+    padding: 9px;
 }
 
 td:hover{
@@ -34,6 +33,6 @@ td:hover{
   }
   td{
     border: 1px solid black;
-    padding: 8px;
+    padding: 2px;
 }
 }

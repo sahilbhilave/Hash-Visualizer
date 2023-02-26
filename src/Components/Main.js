@@ -6,6 +6,7 @@ import { insertLinear, findLinear, deleteLinear } from './Functions/Hashing/Line
 import { deleteQuadratic, findQuadratic, insertQuadratic } from './Functions/Hashing/QuadraticProbing';
 import { insertDouble, findDouble, deleteDouble } from './Functions/Hashing/DoubleHashing';
 
+
 function Main() {
     let d = document.getElementById('title');
     let res = document.getElementById('result');
@@ -121,7 +122,26 @@ function Main() {
             func.innerHTML = "Position = (Element + i<sup>2</sup>) % Size";
         }
         else if (value === "Double Hashing") {
-            func.innerHTML = "Position = [(Hash1(key) + i * Hash2(key))] % Size <p>Hash1(key) = key % 10</p><p>Hash2(key) = 5 - (key % 5)</p>";
+            func.innerHTML = "Position = [(Hash1(key) + i * Hash2(key))] % Size <p>Hash1(key) = key % Size</p><p>Hash2(key) = 5 - (key % 5)</p>";
+        }
+    };
+
+    const changeSize = event => {
+        Reset();
+        let SIZE = parseInt(event.target.value);
+
+        
+        document.getElementById('size').innerText = SIZE;
+        for(let i=1;i<15;i++)
+        {
+            document.getElementById(input(parseInt(i))).style.display = "";
+            document.getElementById(parseInt(i)).style.display = "";
+        }
+        let x = parseInt(SIZE);
+        for(let i=x;i<=15;i++)
+        {
+            document.getElementById(input(parseInt(i))).style.display = "none";
+            document.getElementById(parseInt(i)).style.display = "none";
         }
     };
 
@@ -138,9 +158,28 @@ function Main() {
                         <option value="Quadratic Probing">Quadratic Probing</option>
                         <option value="Double Hashing">Double Hashing</option>
                     </optgroup>
+                </select> 
+                <select  onChange={changeSize} name="ssize" id="ssize">
+                <optgroup label="Select Size Of Table"></optgroup>
+                        <option value="1">Table Size : 1</option>
+                        <option value="2">Table Size : 2</option>
+                        <option value="3">Table Size : 3</option>
+                        <option value="4">Table Size : 4</option>
+                        <option value="5">Table Size : 5</option>
+                        <option value="6">Table Size : 6</option>
+                        <option value="7">Table Size : 7</option>
+                        <option value="8">Table Size : 8</option>
+                        <option value="9">Table Size : 9</option>
+                        <option value="10">Table Size : 10</option>
+                        <option value="11">Table Size : 11</option>
+                        <option value="12">Table Size : 12</option>
+                        <option value="13">Table Size : 13</option>
+                        <option value="14">Table Size : 14</option>
+                        <option value="15" selected>Table Size : 15</option>
+                    
                 </select>
             </div>
-            <input type="number" id="num" name="num" onChange={handleChange} value={num} autoComplete="off" placeholder='1' defaultValue='1' min="1" ></input>
+            <input type="number" id="num" name="num" onChange={handleChange} value={num} autoComplete="off" placeholder='Enter Element' defaultValue='1' min="1" ></input>
             <button type="button" onClick={insert}>Insert</button>
             <button type="button" onClick={find}>Find</button>
             <button type="button" onClick={del}>Delete</button>

@@ -8,7 +8,6 @@
     background-color: white;
     color: white;
     text-align: center;
-
  }
 
 
@@ -16,11 +15,18 @@ b{
    display: block;
 }
  #type{
-   width : 30%;
+   /* width : 30%; */
    padding : 10px;
    font-size: 15px;
    text-align: center;
    margin : auto;
+   
+ }
+
+ #ssize{
+   margin-left: 20px;
+   padding: 10px;
+   font-size: 15px;
  }
 
  input{
@@ -50,9 +56,14 @@ b{
       color: white;
       text-align: center;
    }
+
+   #ssize{
+      font-size: 12px;
+    }
    #type
    {
-      width: 200px;
+      width: 130px;
+      font-size: 12px;
    }
    input{
       padding : 10px;

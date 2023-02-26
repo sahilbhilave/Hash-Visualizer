@@ -3,13 +3,15 @@
   width: 90%;
   padding: 10px;
   overflow-y: scroll;
-  height: 250px;
+  height: 200px;
 }
 
 input[type=checkbox] {
   display: none;
 }
-
+p{
+  margin: 10px;
+}
 h2{
   font-size: 30px;
   margin: 10px;
@@ -43,8 +45,12 @@ input[type=checkbox]:checked ~ label ~ .content {
   display: block;
 }
 
+#size{
+  display: none;
+}
 
-@media (max-height: 800px) {
+
+@media (max-height: 900px) {
   #content {
     margin: auto;
     width: 90%;
@@ -53,15 +59,12 @@ input[type=checkbox]:checked ~ label ~ .content {
     height: 200px;
   }
   p{
-    margin: 10px;
-  }
-  h2{
-    font-size: 20px;
     margin: 5px;
   }
+  
 }
 
-@media (max-height: 700px) {
+@media (max-height: 800px) {
   #content {
     margin: auto;
     width: 90%;
@@ -69,9 +72,11 @@ input[type=checkbox]:checked ~ label ~ .content {
     overflow-y: scroll;
     height: 100px;
   }
-  p{
+  h2{
+    font-size: 20px;
     margin: 5px;
   }
+  
 }
 
 

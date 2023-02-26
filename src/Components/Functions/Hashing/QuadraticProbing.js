@@ -2,24 +2,28 @@ import {isFull} from '../basic'
 
 function insertQuadratic(c,num,input,res)
 {
-    c.innerHTML = "<p>position = " + num + " % 10</p> <p>position = " + (num % 10) + "</p>";
-                let str = input(num % 10);
+    if (!isFull()) {
+    let SIZE = parseInt(document.getElementById('size').innerText);
+
+    c.innerHTML = "<p>position = " + num + " % "+SIZE+"</p> <p>position = " + (num % SIZE) + "</p>";
+                let str = input(num % SIZE);
 
                 let n = document.getElementById(str);
                 if (n.innerText === '') {
                     n.innerText = num;
                     n.style.backgroundColor = "green";
-                    res.innerHTML = "<b style=\"color:green\">Element Added at Position " + num % 10 + "</b>";
+                    res.innerHTML = "<b style=\"color:green\">Element Added at Position " + num % SIZE + "</b>";
                 }
                 else {
                     let x = 0;
                     
                     n.style.backgroundColor = "yellow";
                     let count = 0
-                    while (count <= 6 && n.innerText !== "" && n.innerText !== num && n.innerText !== 'x') {
-                        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % 10 + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>)%10]</p>";
+                    //while (count <= 6 && n.innerText !== "" && n.innerText !== num && n.innerText !== 'x') {
+                    while (count <= 6 && n.innerText !== "" && n.innerText !== 'x') {
+                        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % SIZE + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>) % "+SIZE+"]</p>";
                         
-                        x = (parseInt(num) + count * count) % 10;
+                        x = (parseInt(num) + count * count) % SIZE;
                         let z = input(x);
                         n = document.getElementById(z);
                         count++;
@@ -34,39 +38,42 @@ function insertQuadratic(c,num,input,res)
                     }
                     else if(count >= 6 && !isFull())
                     {
-                        c.innerHTML = c.innerHTML + "<b>Array is Not FULL</b>";
+                        c.innerHTML = c.innerHTML + "<b>Table is Not FULL</b>";
                         res.innerHTML = "<b style=\"color:red\">Function value cannot be hashed in current table</b>";
                     }
-                    else if (n.innerText === num) {
-                        n.style.backgroundColor = "red";
-                        c.innerHTML = c.innerHTML + "<b>Element Already Present at " + x + "</b>";
-                        res.innerHTML = "<b style=\"color:red\">Element Already Present at " + x + "</b>";
-                    }
-                    else if (isFull()) {
-                        c.innerHTML = c.innerHTML + "<b>Array is FULL</b>";
-                        res.innerHTML = "<b style=\"color:red\">Array is FULL</b>";
-                    }
-
+                    // else if (n.innerText === num) {
+                    //     n.style.backgroundColor = "red";
+                    //     c.innerHTML = c.innerHTML + "<b>Element Already Present at " + x + "</b>";
+                    //     res.innerHTML = "<b style=\"color:red\">Element Already Present at " + x + "</b>";
+                    // }
                 }
+            
+        }
+        else {
+            c.innerHTML = "<b>Table is FULL</b>";
+            res.innerHTML = "<b style=\"color:red\">Table is FULL</b>";
+        }
 }
 
 
 function findQuadratic(c,num,input,res)
 {
-    c.innerHTML = "<p>position = " + num + " % 10</p> <p>position = " + (num % 10) + "</p>";
-            let str = input(num % 10);
+    let SIZE = parseInt(document.getElementById('size').innerText);
+
+    c.innerHTML = "<p>position = " + num + " % "+SIZE+"</p> <p>position = " + (num % SIZE) + "</p>";
+            let str = input(num % SIZE);
 
             let n = document.getElementById(str);
 
 
-            let x = num % 10;
+            let x = num % SIZE;
             n.style.backgroundColor = "yellow";
             let count = 0
             
-            while (count <= 9 && n.innerText !== "" && n.innerText !== num) {
-                c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % 10 + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>)%10]</p>";
-                ;
-                x = (parseInt(num) + count * count) % 10;
+            while (count <= (SIZE-1) && n.innerText !== "" && n.innerText !== num) {
+                c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % SIZE + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>) % "+SIZE+"]</p>";
+                
+                x = (parseInt(num) + count * count) % SIZE;
                 let z = input(x);
                 n = document.getElementById(z);
                 count++;
@@ -85,20 +92,22 @@ function findQuadratic(c,num,input,res)
 
 function deleteQuadratic(c,num,input,res)
 {
-    c.innerHTML = "<p>position = " + num + " % 10</p> <p>position = " + (num % 10) + "</p>";
-    let str = input(num % 10);
+    let SIZE = parseInt(document.getElementById('size').innerText);
+
+    c.innerHTML = "<p>position = " + num + " % "+SIZE+"</p> <p>position = " + (num % SIZE) + "</p>";
+    let str = input(num % SIZE);
 
     let n = document.getElementById(str);
 
 
-    let x = num % 10;
+    let x = num % SIZE;
     n.style.backgroundColor = "yellow";
     let count = 0
     
-    while (count <= 9 && n.innerText !== "" && n.innerText !== num) {
-        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % 10 + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>)%10]</p>";
-        ;
-        x = (parseInt(num) + count * count) % 10;
+    while (count <= (SIZE-1) && n.innerText !== "" && n.innerText !== num) {
+        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % SIZE + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>) % "+SIZE+"]</p>";
+        
+        x = (parseInt(num) + count * count) % SIZE;
         let z = input(x);
         n = document.getElementById(z);
         count++;

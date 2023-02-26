@@ -1,31 +1,36 @@
+
+
 function insertHashing(c,num,input,res) {
-    c.innerHTML = "<p>position = " + num + " % 10</p> <p>position = " + (num % 10) + "</p>";
-    let str = input(num % 10);
+    let SIZE = document.getElementById('size').innerText;
+    c.innerHTML = "<p>position = " + num + " % "+SIZE+"</p> <p>position = " + (num % SIZE) + "</p>";
+    let str = input(num % SIZE);
 
     let n = document.getElementById(str);
     if (n.innerText === '' || n.innerText === 'x') {
         n.innerText = num;
         n.style.backgroundColor = "green";
-        res.innerHTML = "<b style=\"color:green\">Element Added at Position " + num % 10 + "</b>";
+        res.innerHTML = "<b style=\"color:green\">Element Added at Position " + num % SIZE + "</b>";
     }
     else {
         n.style.backgroundColor = "red";
-        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + num % 10 + "</b>";
-        res.innerHTML = "<b style=\"color:red\">Collision Occured At Position " + num % 10 + "</b>";
+        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + num % SIZE + "</b>";
+        res.innerHTML = "<b style=\"color:red\">Collision Occured At Position " + num % SIZE + "</b>";
     }
 }
 
 
 function findHashing(c,num,input,res)
 {
-            c.innerHTML = "<p>position = " + num + " % 10</p> <p>position = " + (num % 10) + "</p>";
-            let str = input(num % 10);
+        let SIZE = document.getElementById('size').innerText;
+
+            c.innerHTML = "<p>position = " + num + " % "+SIZE+"</p> <p>position = " + (num % SIZE) + "</p>";
+            let str = input(num % SIZE);
 
             let n = document.getElementById(str);
             if (n.innerText === num) {
                 n.style.backgroundColor = "green";
-                c.innerHTML = c.innerHTML + "<b>Element found at position " + num % 10 + "</b>";
-                res.innerHTML = "<b style=\"color:green\">Element found at position " + num % 10 + "</b>";
+                c.innerHTML = c.innerHTML + "<b>Element found at position " + num % SIZE + "</b>";
+                res.innerHTML = "<b style=\"color:green\">Element found at position " + num % SIZE + "</b>";
             }
             else {
                 n.style.backgroundColor = "red";
@@ -36,8 +41,10 @@ function findHashing(c,num,input,res)
 
 function deleteHashing(c,num,input,res)
 {
-            c.innerHTML = "<p>position = " + num + " % 10</p> <p>position = " + (num % 10) + "</p>";
-            let str = input(num % 10);
+    let SIZE = document.getElementById('size').innerText;
+
+            c.innerHTML = "<p>position = " + num + " % "+SIZE+"</p> <p>position = " + (num % SIZE) + "</p>";
+            let str = input(num % SIZE);
 
             let n = document.getElementById(str);
             if (n.innerText === num) {
