@@ -1,18 +1,39 @@
 table{
+  width: 90%;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+  table-layout: fixed;
 }
 
 #Table{
-  width: 90%;
   margin: auto;
+  
 }
 
 td{
+    width: 10%;
     border: 1px solid black;
     padding: 9px;
+    height: 20px;
+    text-align: center;
+    /* overflow: hidden; */
 }
+.no{
+  overflow-x: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
 
 td:hover{
   border: 1px solid magenta;
@@ -25,14 +46,23 @@ td:hover{
 
 @media (max-width: 800px) {
   table{
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width : 0%;
-    
+    width: 100%;
+    font-size: 10px;
+    margin-top: 20px;
+
   }
   td{
+    padding: 5px;
+}
+}
+
+@media (max-height: 800px) {
+  table{
+    margin-top: 20px;
+  }
+
+  td{
     border: 1px solid black;
-    padding: 2px;
+    padding: 5px;
 }
 }
