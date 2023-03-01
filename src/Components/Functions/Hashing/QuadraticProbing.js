@@ -20,7 +20,7 @@ function insertQuadratic(c,num,input,res)
                     n.style.backgroundColor = "yellow";
                     let count = 0
                     //while (count <= 6 && n.innerText !== "" && n.innerText !== num && n.innerText !== 'x') {
-                    while (count <= 6 && n.innerText !== "" && n.innerText !== 'x') {
+                    while (count <= (SIZE-1) && n.innerText !== "" && n.innerText !== 'x') {
                         c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % SIZE + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>) % "+SIZE+"]</p>";
                         
                         x = (parseInt(num) + count * count) % SIZE;
@@ -36,7 +36,7 @@ function insertQuadratic(c,num,input,res)
                         n.innerText = num;
                         n.style.backgroundColor = "green";
                     }
-                    else if(count >= 6 && !isFull())
+                    else if(count >= (SIZE-1) && !isFull())
                     {
                         c.innerHTML = c.innerHTML + "<b>Table is Not FULL</b>";
                         res.innerHTML = "<b style=\"color:red\">Function value cannot be hashed in current table</b>";

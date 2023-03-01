@@ -1,4 +1,4 @@
-#content {
+.content {
   margin: auto;
   width: 90%;
   padding: 10px;
@@ -20,6 +20,8 @@ h2{
 #credit{
   margin: 5px;
 }
+
+
 
 input[type=checkbox] ~ label {
   background: green;

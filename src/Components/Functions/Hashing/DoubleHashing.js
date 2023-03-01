@@ -48,7 +48,7 @@ function insertDouble(c, num, input, res) {
             n.innerText = num;
             n.style.backgroundColor = "green";
         }
-        else if (count >= 6 && !isFull()) {
+        else if (count >= (SIZE-1) && !isFull()) {
             c.innerHTML = c.innerHTML + "<b>Table is Not FULL</b>";
             res.innerHTML = "<b style=\"color:red\">Function value cannot be hashed in current table</b>";
         }
