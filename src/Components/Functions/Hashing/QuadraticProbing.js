@@ -21,12 +21,13 @@ function insertQuadratic(c,num,input,res)
                     let count = 0
                     //while (count <= 6 && n.innerText !== "" && n.innerText !== num && n.innerText !== 'x') {
                     while (count <= (SIZE-1) && n.innerText !== "" && n.innerText !== 'x') {
-                        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % SIZE + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>) % "+SIZE+"]</p>";
                         
+                        c.innerHTML = c.innerHTML + "<b>Collision Occured At Position " + (parseInt(num) + count * count) % SIZE + "</b><p> [Next Position = (" + num + " + " + (count + 1) + "<sup>2</sup>) % "+SIZE+"]</p>";
+                        count++;
                         x = (parseInt(num) + count * count) % SIZE;
                         let z = input(x);
                         n = document.getElementById(z);
-                        count++;
+                        
 
 
                     }

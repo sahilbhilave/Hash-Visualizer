@@ -4,8 +4,8 @@ function Content() {
 
     return (
         <div >
-            <h2 id="title"><b>Hashing</b></h2> 
-            <p id="function">position = element % size</p>
+            <h2 id="title"><b>Chaining</b></h2> 
+            <p id="function">Position = (Element + i) % Size</p>
             <b id="credit">--Developed By Sahil Bhilave--</b>
 
             <p id = "size">15</p>

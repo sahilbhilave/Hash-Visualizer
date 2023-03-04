@@ -3,6 +3,7 @@ import './css/table.css'
 
 
 function Table() {
+  
 return (
   
   <div id="Table">
@@ -25,7 +26,23 @@ return (
         <td className='no' id = "fourteen"></td>
         <td className='no' id = "fifteen"></td>
       </tr>
-      
+      <tr id = "chain">
+        <td id="d0"></td>
+        <td id="d1"></td>
+        <td id="d2"></td>
+        <td id="d3"></td>
+        <td id="d4"></td>
+        <td id="d5"></td>
+        <td id="d6"></td>
+        <td id="d7"></td>
+        <td id="d8"></td>
+        <td id="d9"></td>
+        <td id="d10"></td>
+        <td id="d11"></td>
+        <td id="d12"></td>
+        <td id="d13"></td>
+        <td id="d14"></td>
+      </tr>
       <tr id = "index">
         <td id="0">0</td>
         <td id="1">1</td>
@@ -43,6 +60,8 @@ return (
         <td id="13">13</td>
         <td id="14">14</td>
       </tr>
+
+
     </table>
   </div>
 );

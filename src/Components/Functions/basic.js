@@ -43,6 +43,19 @@ function clearColor() {
 }
 
 function Reset() {
+    document.getElementById("dela").disabled = false;
+
+    if(document.getElementById("title").innerText !== "Chaining"){
+        hideChain();
+    }
+    else if(document.getElementById("title").innerText === "Chaining")
+    {
+        document.getElementById("dela").disabled = true;
+    }
+
+    
+   
+
     clearColor();
     let c = document.getElementById('calc');
     let res = document.getElementById('result');
@@ -51,8 +64,27 @@ function Reset() {
     let SIZE = parseInt(document.getElementById('size').innerText);
     for (let i = 0; i < SIZE; i++) {
         let a = document.getElementById(input(i));
+        let b = document.getElementById("d"+i);
         a.innerText = "";
+        b.innerText = "";
     }
+}
+
+function hideChain(){
+    let SIZE = parseInt(document.getElementById('size').innerText);
+        for(let i=0;i<SIZE;i++)
+        {
+            document.getElementById("d"+parseInt(i)).style.display = "none";
+        }
+}
+
+
+function showChain(){
+    let SIZE = parseInt(document.getElementById('size').innerText);
+        for(let i=0;i<SIZE;i++)
+        {
+            document.getElementById("d"+parseInt(i)).style.display = "";
+        }
 }
 
 function isFull() {
@@ -67,4 +99,4 @@ function isFull() {
     return true;
 }
 
-export { input, clearColor, isFull, Reset };
+export { input, clearColor, isFull, Reset, showChain, hideChain};

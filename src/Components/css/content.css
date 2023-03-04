@@ -54,7 +54,7 @@ input[type=checkbox]:checked ~ label ~ .content {
 
 @media (max-height: 920px) {
   #content {
-    height: 250px;
+    height: 300px;
   }
   p{
     margin: 5px;
@@ -62,30 +62,83 @@ input[type=checkbox]:checked ~ label ~ .content {
   
 }
 
-@media (max-height: 820px) {
+
+
+@media (max-height: 880px) {
   h2{
     margin: 5px;
     font-size: 20px;
   }
 }
 
-@media (max-height: 760px) {
+@media (max-height: 860px) {
   #content {
-    height: 200px;
+    height: 270px;
   }
   h2{
     margin: 5px;
   }
 }
 
+@media (max-height: 830px) {
+  #content {
+    height: 250px;
+  }
+  
+}
+
+@media (max-height: 790px) {
+  #content {
+    height: 230px;
+  }
+  
+}
+@media (max-height: 770px) {
+  #content {
+    height: 220px;
+  }
+  
+}
+
+@media (max-height: 760px) {
+  #content {
+    height: 210px;
+  }
+  
+}
+
+@media (max-height: 740px) {
+  #content {
+    height: 200px;
+  }
+  
+}
+
+@media (max-height: 730px) {
+  #content {
+    height: 180px;
+  }
+  
+}
+
 @media (max-height: 700px) {
   #content {
-    height: 100px;
+    height: 150px;
   }
-  h2{
-    margin: 5px;
+  
+}
+
+@media (max-height: 670px) {
+  #content {
+    height: 130px;
   }
   
 }
 
 
+@media (max-height: 640px) {
+  #content {
+    height: 100px;
+  }
+  
+}
